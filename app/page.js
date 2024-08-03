@@ -27,7 +27,7 @@ export default function Home() {
         deleting, and updating items, it ensures that your pantry is always
         accurately reflected. The built-in search functionality allows you to
         quickly find specific items, making it easier to keep track of what you
-        have on hand. Whether you're stocking up on essentials or managing a
+        have on hand. Whether you are stocking up on essentials or managing a
         large collection of ingredients, the Pantry Tracker simplifies inventory
         management with its intuitive interface and efficient features.
       </Typography>
