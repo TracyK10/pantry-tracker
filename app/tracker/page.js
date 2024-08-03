@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { useState, useEffect } from "react";
 import { firestore } from "@/firebase";
 import {
@@ -91,13 +91,14 @@ export default function Tracker() {
 
   return (
     <Box
-      width="100vw"
+      width="100%"
       height="90vh"
       display="flex"
+      flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      flexDirection="column"
       gap={2}
+      padding={2}
       bgcolor="#fff"
     >
       {/* Add Item Modal */}
@@ -106,7 +107,7 @@ export default function Tracker() {
           position="absolute"
           top="50%"
           left="50%"
-          width={400}
+          width={{ xs: "90%", sm: 400 }}
           bgcolor="white"
           border="2px solid #000"
           boxShadow={24}
@@ -147,7 +148,7 @@ export default function Tracker() {
           position="absolute"
           top="50%"
           left="50%"
-          width={400}
+          width={{ xs: "90%", sm: 400 }}
           bgcolor="white"
           border="2px solid #000"
           boxShadow={24}
@@ -183,7 +184,7 @@ export default function Tracker() {
         placeholder="Search items"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        sx={{ mb: 2, width: "800px" }}
+        sx={{ mb: 2, width: { xs: "90%", sm: "800px" } }}
       />
 
       <Button
@@ -196,23 +197,29 @@ export default function Tracker() {
 
       <Box border="1px solid #fff">
         <Box
-          width="800px"
+          width={{ xs: "90%", sm: "800px" }}
           height="100px"
           bgcolor="#fff"
           alignItems="center"
           justifyContent="center"
           display="flex"
           flexDirection="column"
+          p={2}
         >
           <Typography variant="h3" color="#000" textDecoration="underline">
             Pantry Tracker
           </Typography>
           <Typography variant="p" color="#000">
             Feel free to add your items below
-            </Typography>
+          </Typography>
         </Box>
 
-        <Stack width="800px" height="300px" spacing={2} overflow="auto">
+        <Stack
+          width={{ xs: "90%", sm: "800px" }}
+          height="300px"
+          spacing={2}
+          overflow="auto"
+        >
           {filteredPantry.map((item) => (
             <Box
               key={item.name}
@@ -222,7 +229,7 @@ export default function Tracker() {
               alignItems="center"
               justifyContent="space-between"
               bgcolor="#fff"
-              padding={5}
+              padding={3}
               border="1px solid #000"
               borderRadius={2}
             >
@@ -232,22 +239,18 @@ export default function Tracker() {
               <Typography variant="h4" color="#000" textAlign="center">
                 {item.quantity}
               </Typography>
-              <Stack direction="row" spacing={2}>
+              <Stack direction="row" spacing={1}>
                 <Button
                   variant="contained"
                   color="secondary"
-                  onClick={() => {
-                    addItem(item.name);
-                  }}
+                  onClick={() => addItem(item.name)}
                 >
                   Add
                 </Button>
                 <Button
                   variant="contained"
                   color="secondary"
-                  onClick={() => {
-                    removeItem(item.name);
-                  }}
+                  onClick={() => removeItem(item.name)}
                 >
                   Remove
                 </Button>

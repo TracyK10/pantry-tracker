@@ -17,11 +17,19 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
       height="90vh"
+      padding={2}
+      sx={{ textAlign: "center" }}
     >
-      <Typography variant="h3" component="h1" gutterBottom>
+      <Typography variant="h4" component="h1" gutterBottom>
         Welcome to Pantry Tracker
       </Typography>
-      <Typography variant="p" component="p" gutterBottom width={"70%"} fontWeight={500}>
+      <Typography
+        variant="p"
+        component="p"
+        gutterBottom
+        width={{ xs: "90%", sm: "70%" }}
+        fontWeight={500}
+      >
         The Pantry Tracker is a comprehensive tool designed to streamline the
         management of your kitchen inventory. With features for adding,
         deleting, and updating items, it ensures that your pantry is always
