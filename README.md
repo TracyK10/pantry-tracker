@@ -82,7 +82,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries or feedback, please contact [your-email@example.com](mailto:chirutracy@gmail.com).
+For any inquiries or feedback, please contact [chirutracy@gmail.com](mailto:chirutracy@gmail.com).
 
 ---
 
